@@ -1,0 +1,41 @@
+.content {
+    background-color: #eee;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 50px;
+}
+
+.content h2,
+form {
+    color: black;
+}
+
+.btn {
+    margin: 25px 10px;
+}
+
+.arrow_back {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: rgb(124, 121, 119);
+    display: flex;
+    margin: 15px;
+    transition: all .3s linear;
+    outline: none;
+}
+
+.arrow_back:hover {
+    background-color: rgb(43, 43, 43);
+}
+
+.arrow_back mat-icon {
+    font-size: 30px;
+    width: 30px;
+    height: 30px;
+    margin: auto;
+}

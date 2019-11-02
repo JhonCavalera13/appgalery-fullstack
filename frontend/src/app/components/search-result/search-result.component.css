@@ -1,0 +1,54 @@
+.arrow_back {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: rgb(124, 121, 119);
+    display: flex;
+    margin: 15px;
+    transition: all .3s linear;
+    outline: none;
+}
+
+.arrow_back:hover {
+    background-color: rgb(43, 43, 43);
+}
+
+.arrow_back mat-icon {
+    font-size: 30px;
+    width: 30px;
+    height: 30px;
+    margin: auto;
+}
+
+.search {
+    margin-left: 10px;
+}
+
+.input-search {
+    width: 200px;
+    border: none;
+    border-bottom: 1px solid #bbb;
+    background: transparent;
+    outline: none;
+    color: rgb(223, 217, 217);
+    margin-left: 150px;
+}
+
+.input-search::placeholder {
+    color: #bbb;
+}
+
+.content-fotografia {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    height: 600px;
+}
+
+.fotografia {
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+}

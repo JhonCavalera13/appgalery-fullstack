@@ -1,0 +1,41 @@
+<mat-toolbar color="primary" class="shadow">
+    <mat-toolbar-row>
+        <span [routerLink]="['/home',1]">Image Galery</span>
+        <span class="tool-spacer"></span>
+        <mat-icon class="tool-icon" [routerLink]="['/home',1]">home</mat-icon>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<div class="container p-5">
+    <div class="row">
+        <div class="content-login">
+            <div class="col-md-6 col-sm-12 offset-3">
+                <div class="card shadow-lg">
+                    <div class="card-header">
+                        <h2 class="lead text-center" *ngIf="!isError">Iniciar Sesión</h2>
+                    </div>
+                    <div class="card-body">
+                        <form #loginForm="ngForm" (ngSubmit)="login()" autocomplete="off">
+                            <mat-form-field class="user-input col-sm-12">
+                                <input matInput type="email" #user="ngModel" email name="user" [(ngModel)]="usuario.email" required placeholder="Email" autofocus>
+                                <mat-error *ngIf="user.invalid">Email requerido</mat-error>
+                            </mat-form-field>
+
+                            <mat-form-field class="password-input col-sm-12">
+                                <input matInput type="password" #password="ngModel" name="password" [(ngModel)]="usuario.password" required placeholder="Password">
+                                <mat-error *ngIf="password.invalid">El password es requerido</mat-error>
+                            </mat-form-field>
+
+                            <mat-checkbox class="col-md-12" color="primary" name="remember-me" [(ngModel)]="recordarme">
+                                Recordar mi usuario
+                            </mat-checkbox>
+
+                            <a class="signin ml-3" [routerLink]="['/register']">Regristrate</a>
+                            <button mat-raised-button class="btn btn-block mt-2" color="primary" type="submit" [disabled]="!loginForm.form.valid">Iniciar Sesión</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

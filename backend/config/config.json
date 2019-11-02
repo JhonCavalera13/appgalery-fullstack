@@ -1,0 +1,29 @@
+{
+  "development": {
+    "username": "root",
+    "password": null,
+    "database": "app-galeria",
+    "host": "localhost",
+    "dialect": "mariadb",
+    "dialectOptions": {
+      "timezone": "Etc/GMT+7"
+    }
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "app-galeria",
+    "host": "localhost",
+    "dialect": "mariadb",
+    "operatorsAliases": false
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "app-galeria",
+    "host": "localhost",
+    "dialect": "mariadb",
+    "operatorsAliases": false
+  },
+  "token_secret":"123fffBc456r%SERT9870_"
+}

@@ -1,0 +1,19 @@
+<div class="banner">
+    <div class="home" [routerLink]="['/home',1]">
+        <mat-icon>home</mat-icon>
+    </div>
+
+    <div class="search" [routerLink]="['/admin/search/result']">
+        <mat-icon>search</mat-icon>
+    </div>
+
+    <div class="opciones-usuario">
+        <div class="datos">
+            <b>Hola:</b> {{identity.username}}
+        </div>
+        <div class="logout" (click)="logout()">Cerrar Sesión</div>
+    </div>
+</div>
+<div class="content-admin">
+    <router-outlet></router-outlet>
+</div>

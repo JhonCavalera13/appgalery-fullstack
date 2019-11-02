@@ -1,0 +1,267 @@
+.content-home {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.images {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+}
+
+.image-item {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    z-index: 1;
+}
+
+.data-image {
+    position: absolute;
+    left: 80px;
+    bottom: 120px;
+    right: 0px;
+    color: #eee;
+    z-index: 3;
+    font-size: 40px;
+    max-width: 500px;
+    font-family: "Roboto-Regular";
+}
+
+.leer-mas {
+    position: absolute;
+    bottom: 50px;
+    left: 0px;
+    right: 0px;
+    display: flex;
+    flex-direction: row;
+}
+
+.boton-leer-mas {
+    width: 34px;
+    height: 34px;
+    border: 1px solid #eee;
+    border-radius: 50%;
+    display: flex;
+    cursor: pointer;
+}
+
+.boton-leer-mas mat-icon {
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+    color: #eee;
+    margin: auto;
+}
+
+.txt-leer-mas {
+    font-family: 'Roboto-ThinItalic';
+    margin: auto 15px;
+    color: #eee;
+}
+
+.linea-inferior {
+    margin: auto auto auto 0px;
+    height: 1px;
+    position: absolute;
+    left: 120px;
+    top: 18px;
+    right: 100px;
+    background-color: #eee;
+}
+
+.login {
+    position: absolute;
+    left: 20px;
+    top: 15px;
+    cursor: pointer;
+    transition: all .2s linear;
+    z-index: 2;
+}
+
+.login mat-icon {
+    font-size: 49px;
+    width: 30px;
+    height: 30px;
+    outline: none;
+}
+
+.login:hover {
+    transform: scale(1.2);
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+.dropdown-item:hover {
+    background-color: #bbb;
+}
+
+.content-arrow-navs {
+    position: absolute;
+    height: 100px;
+    width: 100%;
+    left: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    display: flex;
+}
+
+.content-arrow-navs mat-icon {
+    font-size: 60px;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}
+
+.content-arrow-navs div {
+    color: rgb(15, 70, 216);
+    transition: all .2 linear;
+    position: absolute;
+    outline: none;
+}
+
+.content-arrow-navs div:hover {
+    color: rgb(113, 170, 216);
+}
+
+.move-left {
+    left: 10px;
+}
+
+.move-right {
+    right: 10px;
+}
+
+.ver-mas {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    bottom: 0px;
+    background-color: rgba(30, 30, 30, 0.8);
+    z-index: 6;
+    width: 100%;
+    overflow: hidden;
+}
+
+.ver-mas-detalle {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    font-family: 'Roboto-Thin';
+    font-size: 10px;
+    color: #eee;
+    z-index: 7;
+    display: flex;
+    flex-direction: column;
+}
+
+.ver-mas-nombre {
+    font-family: 'Roboto-Thin';
+    font-size: 6em;
+    color: #eee;
+}
+
+.ver-mas-descripcion {
+    margin-top: 10px;
+    font-family: 'Robot-Thin';
+    font-size: 2.5em;
+    color: #eee;
+}
+
+.ver-mas-autor {
+    margin-top: 20px;
+    font-family: 'Robot-Thin';
+    font-size: 1.5em;
+    color: #eee;
+}
+
+.shared img {
+    width: 40px;
+}
+
+.shared {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+}
+
+.shared * {
+    margin: 3px;
+}
+
+.shared div {
+    cursor: pointer;
+    transition: all .2 linear;
+}
+
+.shared div:hover {
+    transform: scale(1.2);
+}
+
+
+/*THUMBS*/
+
+.show-thumbs {
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    cursor: pointer;
+    z-index: 6;
+    color: #eee;
+    background-color: #333;
+    display: flex;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.show-thumbs mat-icon {
+    font-size: 30px;
+    width: 30px;
+    height: 30px;
+    margin: auto;
+}
+
+.content-thumbs {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    overflow: scroll;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 5;
+}
+
+.num-image {
+    color: #eee;
+    height: 440px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.num-image div {
+    font-family: 'Reboto-bold';
+    font-size: 100px;
+    margin: auto;
+}
+
+.thumb {
+    height: 220px;
+    display: block;
+    padding: 0px;
+    overflow: hidden;
+    cursor: pointer;
+    color: #eee;
+}

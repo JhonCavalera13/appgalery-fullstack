@@ -1,0 +1,79 @@
+<div class="content-home">
+    <div class="images" *ngFor="let image of images">
+        <div class="image-item" [@move-image]="direccion" *ngIf="imageSelected.fotografia.id == image.id" [style.background-image]="'url('+ url + '/images/' + image.image + '/false' + ')'">
+            <div class="data-image" *ngIf="!ver_mas">
+                {{image.fotografia}}
+            </div>
+
+            <div class="leer-mas">
+                <div class="boton-leer-mas" (click)="ver_mas= !ver_mas">
+                    <mat-icon>add</mat-icon>
+                </div>
+                <div class="txt-leer-mas">Leer Más</div>
+                <div class="linea-inferior"></div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="content-arrow-navs">
+    <div class="move-left" *ngIf="imageSelected.anterior" [routerLink]="['/home',imageSelected.anterior]">
+        <mat-icon>keyboard_arrow_left</mat-icon>
+    </div>
+    <div class="move-right" *ngIf="imageSelected.siguiente" [routerLink]="['/home', imageSelected.siguiente]">
+        <mat-icon>keyboard_arrow_right</mat-icon>
+    </div>
+</div>
+
+<div class="ver-mas" [@ver-mas] *ngIf="ver_mas" (click)="ver_mas= !ver_mas">
+    <div class="ver-mas-detalle col-lg-6 col-md-6 col-xs-10">
+        <div class="ver-mas-nombre detalle">{{imageSelected.fotografia.name}}</div>
+        <div class="ver-mas-descripcion detalle">{{imageSelected.fotografia.description}}</div>
+        <div class="ver-mas-autor detalle">{{imageSelected.fotografia.author}}</div>
+    </div>
+    <div class="shared detalle">
+        <div class="facebook">
+            <img src="../../../assets/imagenes/facebook.png" alt="">
+        </div>
+        <div class="youtube">
+            <img src="../../../assets/imagenes/youtube.png" alt="">
+        </div>
+        <div class="google">
+            <img src="../../../assets/imagenes/google.png" alt="">
+        </div>
+
+    </div>
+</div>
+
+<!--THuMBS-->
+<div class="show-thumbs" (click)="show_thumbs = !show_thumbs">
+    <mat-icon *ngIf="!show_thumbs">menu</mat-icon>
+    <mat-icon *ngIf="show_thumbs">close</mat-icon>
+</div>
+
+<div class="content-thumbs" *ngIf="show_thumbs" [@show-thumbs]>
+    <div class="row">
+        <div class="num-image col-lg-3 col-md-4 col-sm-6">
+            <div>{{imageSelected.fotografia.id}}</div>
+        </div>
+        <div class="thumb col-lg-3 col-md-4 col-sm-6" *ngFor="let image of images">
+            <app-fotografia [image]="image" [seleccionada]="imageSelected.fotografia"></app-fotografia>
+        </div>
+    </div>
+</div>
+
+<div class="login" *ngIf="!show_thumbs">
+    <mat-icon class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown">account_circle</mat-icon>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" *ngIf="!showIconLogin()" [routerLink]="['/login']">Iniciar Sesión</a>
+        <a class="dropdown-item" *ngIf="!showIconLogin()" [routerLink]="['/register']">Registrarse</a>
+        <a class="dropdown-item" *ngIf="showIconLogin()" [routerLink]="['/admin/list']">Perfil</a>
+        <div class="dropdown-divider" *ngIf="showIconLogin()"></div>
+        <a class="dropdown-item" *ngIf="showIconLogin()" (click)="logout()">Cerrar sesión</a>
+    </div>
+</div>
+
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
+    <p style="font-size: 20px; color: white">Cargando...</p>
+</ngx-spinner>

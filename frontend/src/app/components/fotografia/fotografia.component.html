@@ -1,0 +1,9 @@
+<div class="item-image" [routerLink]="['/home',image.id]" [style.background-image]="'url('+ url + '/images/' + image.image + '/true' + ')'" [ngClass]="seleccionada == image ? 'item-image-selected': ''">
+    <!-- si esta seleccionada item-image-selected agrega el borde -->
+    <div class="detalle-imagen">
+        <div class="linea"></div>
+        <div class="numero">{{image.id}}</div>
+        <div class="autor">{{image.autor}}</div>
+    </div>
+    <div *ngIf="seleccionada != image" class="item-image-hover"></div>
+</div>

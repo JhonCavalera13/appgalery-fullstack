@@ -1,0 +1,26 @@
+<div class="arrow_back" [routerLink]="['/admin/list']">
+    <mat-icon>arrow_back</mat-icon>
+</div>
+
+<div class="content">
+    <div class="row">
+        <div class="col-md-7 mx-auto">
+            <form #searchForm="ngForm" (ngSubmit)="searchImage()" autocomplete="off">
+                <input matInput type="text" #search="ngModel" name="search" [(ngModel)]="name" placeholder="Buscar Imagen" class="input-search">
+                <button mat-raised-button color="primary" class="ml-4" type="submit">Buscar</button>
+            </form>
+            <div class="alert alert-danger mt-4" role="alert" *ngIf="isError">
+                Imagen no encontrada
+            </div>
+            <ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
+                <p style="font-size: 20px; color: white">Cargando...</p>
+            </ngx-spinner>
+        </div>
+        <div class="col-md-12 mt-4 " *ngIf="!isError">
+            <div class="content-fotografia mx-auto">
+                <div class="fotografia" [style.background-image]="'url('+ url + '/images/' + image.image + '/false' + ')'">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

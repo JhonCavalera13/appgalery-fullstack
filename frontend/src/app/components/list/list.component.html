@@ -1,0 +1,41 @@
+<div class="row options">
+    <div class="col-6">
+        <div class="add-image mt-3" [routerLink]="['/admin/new']">
+            <mat-icon>add</mat-icon>
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="d-flex justify-content-center mt-4 mr-5">
+            <div class="">
+                <input matInput type="text" class="input-search border-bottom" name="filterImage" [(ngModel)]="filterImage" placeholder="Buscar imagen">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="content" [@anim-listado]="imagenes">
+    <div class="container">
+        <div class="row">
+            <div class="grilla col-lg-2 col-md-3 col-sm-4" *ngFor="let image of imagenes | filter:filterImage">
+                <div class="content-fotografia">
+                    <div class="fotografia" [style.background-image]="'url('+ url + '/images/' + image.image + '/true' + ')'">
+                    </div>
+                    <div class="datos-imagen">
+                        {{image.id}} - {{image.name}}
+                    </div>
+                    <div class="image-hover">
+                        <div [routerLink]="['/admin/edit', image.id]">
+                            <mat-icon>create</mat-icon>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" type="ball-scale-multiple">
+    <p class="spiner">Cargando...</p>
+</ngx-spinner>

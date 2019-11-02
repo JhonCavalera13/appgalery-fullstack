@@ -1,0 +1,44 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <span [routerLink]="['/home',1]">App Galery</span>
+        <span class="tool-spacer"></span>
+        <mat-icon class="tool-icon" [routerLink]="['/home',1]">home</mat-icon>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<div class="container p-5">
+    <div class="row">
+        <div class="content-login">
+            <div class="col-md-6 col-sm-12 offset-3">
+                <div class="card shadow-lg">
+                    <div class="card-header">
+                        <h2 class="lead text-center" *ngIf="!isError">Registrate</h2>
+                    </div>
+                    <div class="card-body">
+                        <form #loginForm="ngForm" (ngSubmit)="onRegister()" autocomplete="off">
+                            <mat-form-field class="user-input col-sm-12">
+                                <input matInput type="email" #user="ngModel" name="user" [(ngModel)]="usuario.username" required placeholder="Nombre de usuario" autofocus>
+                                <mat-error *ngIf="user.invalid">Nombre de usuario requerido</mat-error>
+                            </mat-form-field>
+                            <mat-form-field class="user-input col-sm-12">
+                                <input matInput type="email" #user="ngModel" name="user" [(ngModel)]="usuario.email" required placeholder="Email" email autofocus>
+                                <mat-error *ngIf="user.invalid">Email requerido</mat-error>
+                            </mat-form-field>
+
+                            <mat-form-field class="password-input col-sm-12">
+                                <input matInput type="password" #password="ngModel" name="password" [(ngModel)]="usuario.password" required minlength="4" placeholder="Password">
+                                <mat-error *ngIf="password.invalid">Password requerido</mat-error>
+                            </mat-form-field>
+                            <mat-checkbox class="col-md-12" color="primary" name="remember-me" [(ngModel)]="recordarme">
+                                Recordar mi usuario
+                            </mat-checkbox>
+
+                            <a class="signin ml-3" [routerLink]="['/login']">Iniciar Sesión</a>
+                            <button mat-raised-button class="btn btn-block mt-2" color="primary" type="submit" [disabled]="!loginForm.form.valid">Registrarse</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

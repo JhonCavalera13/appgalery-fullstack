@@ -1,0 +1,142 @@
+.content {
+    padding: 50px;
+    position: absolute;
+    top: 100px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    overflow-y: scroll;
+    color: white;
+}
+
+.grilla {
+    padding: 4px;
+}
+
+.content-fotografia {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: #333;
+}
+
+.content-image-disabled {
+    transform: scale(0.8) rotate(-10deg);
+    opacity: 0.6;
+}
+
+.fotografia {
+    height: 140px;
+    background-size: cover;
+    background-position: center center;
+    border: 1px solid #999;
+    border-bottom: none;
+}
+
+.datos-imagen {
+    height: 40px;
+    width: 100%;
+    font-size: 11px;
+    padding: 5px;
+    color: #eee;
+    border: 1px solid #999;
+    border-top: none;
+}
+
+.image-hover {
+    opacity: 0;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: #333;
+    display: flex;
+    overflow: hidden;
+    transition: all .2s linear;
+}
+
+.image-hover div {
+    margin: auto;
+    padding: 5px;
+    width: 40px;
+    height: 40px;
+    border: 3px solid #eee;
+    border-radius: 3em;
+    cursor: pointer;
+    transform: scale(0);
+    opacity: 0;
+    transition: all .2s linear;
+}
+
+.image-hover mat-icon {
+    color: #eee;
+}
+
+.content-fotografia:hover .image-hover {
+    opacity: 0.7;
+}
+
+.content-fotografia:hover .image-hover div {
+    transform: scale(2);
+    opacity: 1;
+}
+
+.image-hover div:hover {
+    background-color: #eee;
+}
+
+.image-hover div:hover mat-icon {
+    color: #333;
+}
+
+.options {
+    position: absolute;
+    top: 0px;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: #333;
+    overflow: hidden;
+}
+
+.add-image {
+    background-color: rgba(138, 175, 35, 0.5);
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: auto 20px;
+    display: flex;
+    transition: all .2s linear;
+}
+
+.add-image:hover {
+    background-color: rgba(138, 175, 35, 1);
+}
+
+.add-image mat-icon {
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+    color: #eee;
+    margin: auto;
+}
+
+.spiner {
+    font-size: 20px;
+    color: white;
+}
+
+.input-search {
+    width: 200px;
+    border: none;
+    background: transparent;
+    outline: none;
+    color: rgb(223, 217, 217);
+}
+
+.input-search::placeholder {
+    color: #bbb;
+}
